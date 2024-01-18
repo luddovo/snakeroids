@@ -21,4 +21,6 @@ def loop():
         counter += 1
     else:
         # display name
-        g.addstr(0,0,logo)
+        rows = logo.split('\n')
+        for i, r in enumerate(rows):
+            g.addstr(0,i,r)
