@@ -30,6 +30,10 @@ g.pygame.mixer.init()
 g.pygame.mixer.music.load('flying_cacti.mod')
 g.pygame.mixer.music.play(-1)
 
+g.sound_gunshot = g.pygame.mixer.Sound("111047__garyq__gunshot-2-laser.wav")
+g.sound_hit = g.pygame.mixer.Sound("111047__garyq__gunshot-2-laser.wav")
+g.sound_crash = g.pygame.mixer.Sound("541029__audiopapkin__very-low-frequency-impact.wav")
+
 # main loop
 
 while g.running:
@@ -40,6 +44,7 @@ while g.running:
     for event in g.pygame.event.get():
 
         if event.type == g.pygame.KEYDOWN:
+            g.key_pressed = True
             if event.key == g.pygame.K_q:
                 g.running = False
 

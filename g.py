@@ -26,6 +26,8 @@ font = None
 snake_speed_cnt = 0
 first_snake = True
 
+key_pressed = False
+
 # functions
 def addstr(x, y, text):
     text = font.render(text, True, "white", "black")

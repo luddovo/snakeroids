@@ -27,6 +27,7 @@ def loop():
         g.playerx = (g.playerx + 1) % g.width
     elif keys[g.pygame.K_SPACE]:
         g.bullets.append((g.playerx, g.playery))
+        g.pygame.mixer.Sound.play(g.sound_hit)
     elif keys[g.pygame.K_q]: g.running = False
     elif keys[g.pygame.K_ESCAPE]: g.running = False
 
@@ -73,6 +74,7 @@ def loop():
                     hit = l
                     break
             if hit > -1:
+                g.pygame.mixer.Sound.play(g.sound_hit)
                 # remove bullet
                 del g.bullets[i]
                 # split snake
@@ -93,4 +95,6 @@ def loop():
         if (g.playerx, g.playery) in snake['links']:
             hit = True
             break
-    if hit: g.running = False
+    if hit: 
+        g.pygame.mixer.Sound.play(g.sound_crash)
+        g.running = False
