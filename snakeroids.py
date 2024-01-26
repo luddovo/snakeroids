@@ -6,7 +6,8 @@ import g, intro, ingame
 # setup pygame
 g.pygame.init() 
 g.window = g.pygame.display.set_mode((0,0), g.pygame.FULLSCREEN)
-g.font = g.pygame.font.SysFont("monospace", g.FONT_SIZE, True)
+#g.font = g.pygame.font.SysFont("monospace", g.FONT_SIZE, True)
+g.font = g.pygame.font.Font("assets/MonospaceBold.ttf", g.FONT_SIZE)
 clock = g.pygame.time.Clock()
 
 g.pygame.mouse.set_visible(0)
@@ -30,9 +31,9 @@ g.pygame.mixer.init()
 g.pygame.mixer.music.load('flying_cacti.mod')
 g.pygame.mixer.music.play(-1)
 
-g.sound_gunshot = g.pygame.mixer.Sound("111047__garyq__gunshot-2-laser.wav")
-g.sound_hit = g.pygame.mixer.Sound("111047__garyq__gunshot-2-laser.wav")
-g.sound_crash = g.pygame.mixer.Sound("541029__audiopapkin__very-low-frequency-impact.wav")
+g.sound_gunshot = g.pygame.mixer.Sound("assets/111047__garyq__gunshot-2-laser.wav")
+g.sound_hit = g.pygame.mixer.Sound("assets/111047__garyq__gunshot-2-laser.wav")
+g.sound_crash = g.pygame.mixer.Sound("assets/541029__audiopapkin__very-low-frequency-impact.wav")
 
 # main loop
 
