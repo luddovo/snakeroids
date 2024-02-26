@@ -7,7 +7,7 @@ import g, intro, ingame
 g.pygame.init() 
 g.window = g.pygame.display.set_mode((0,0), g.pygame.FULLSCREEN)
 #g.font = g.pygame.font.SysFont("monospace", g.FONT_SIZE, True)
-g.font = g.pygame.font.Font("assets/MonospaceBold.ttf", g.FONT_SIZE)
+g.font = g.pygame.font.Font("assets/PTMono-Regular.ttf", g.FONT_SIZE)
 clock = g.pygame.time.Clock()
 
 g.pygame.mouse.set_visible(0)
@@ -15,7 +15,7 @@ g.pygame.mouse.set_visible(0)
 g.MAXX, g.MAXY = g.window.get_size()
 
 # find number of rows and columns
-g.FSX,g.FSY = g.font.size("M")
+g.FSX,g.FSY = g.font.size("█")
 g.width = g.MAXX // g.FSX
 g.height = g.MAXY // g.FSY
 
@@ -28,7 +28,7 @@ g.snakes.append(ingame.new_snake())
 
 # music
 g.pygame.mixer.init()
-g.pygame.mixer.music.load('flying_cacti.mod')
+g.pygame.mixer.music.load('assets/flying_cacti.mod')
 g.pygame.mixer.music.play(-1)
 
 g.sound_gunshot = g.pygame.mixer.Sound("assets/111047__garyq__gunshot-2-laser.wav")

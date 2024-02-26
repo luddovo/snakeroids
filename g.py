@@ -2,7 +2,7 @@ import pygame
 
 # constants
 NOVALUE = -999
-FONT_SIZE = 15
+FONT_SIZE = 20
 FPS = 60
 
 # game stages
@@ -28,9 +28,12 @@ first_snake = True
 
 key_pressed = False
 
+points = 0
+lives = 5
+
 # functions
-def addstr(x, y, text):
-    text = font.render(text, True, "white", "black")
+def addstr(x, y, text, fg="white", bg="black"):
+    text = font.render(text, True, fg, bg)
     textRect = text.get_rect()
     textRect.topleft = (x * FSX, y * FSY)
     window.blit(text, textRect)

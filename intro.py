@@ -15,7 +15,9 @@ logo = pyfiglet.figlet_format("Snakeroids ! ! !", font="slant")
 def loop():
     global counter
 
-    if g.key_pressed: g.stage = g.INGAME
+    if g.key_pressed:
+        g.height -= 1 
+        g.stage = g.INGAME
 
     if counter < timespan:
         for i in range(density - density * counter // timespan):

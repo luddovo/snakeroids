@@ -38,7 +38,7 @@ def loop():
             x, y = snake['links'][0]
             if snake['snix'] == g.NOVALUE or random.randint(1,100) > 95:
                 snake['snix'] = snake['sniy'] = 0
-                snake['snix' if random.randint(0,1) else 'sniy'] = \
+                snake['snix' if random.randint(0,2) else 'sniy'] = \
                     1 if random.randint(0,1) else -1
             x = ( x + snake['snix'] ) % g.width
             y = ( y + snake['sniy'] ) % g.height
@@ -97,4 +97,15 @@ def loop():
             break
     if hit: 
         g.pygame.mixer.Sound.play(g.sound_crash)
-        g.running = False
+        g.lives -= 1
+        if not g.lives:
+            g.running = False
+
+    # status bar
+            
+    g.points += 1
+
+    points = "Points: " + str(g.points)
+    lives = "Lives: " + str(g.lives)
+    spaces = " " * (g.width - len(points) - len(lives))
+    g.addstr(0, g.height, points + spaces + lives, "black", "white")
