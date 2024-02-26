@@ -8,7 +8,7 @@ FPS = 60
 # game stages
 INTRO = 1
 INGAME = 2
-LIFEDOWN = 3
+#LIFEDOWN = 3
 WON = 4
 GAMEOVER = 5
 

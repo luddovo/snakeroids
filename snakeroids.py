@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import random
-import g, intro, ingame
+import g, intro, ingame, gameover, won
 
 # setup pygame
 g.pygame.init() 
